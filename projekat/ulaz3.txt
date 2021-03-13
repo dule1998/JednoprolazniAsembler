@@ -1,0 +1,22 @@
+.extern c
+.global b
+.section .text
+jeq a
+jeq *b
+jeq *%r1
+jeq *c(%r1)
+jeq *d(%r7)
+jeq 6
+b: addb %r2l,a
+sub $a,(%r2)
+mov e(%r2),e(%r7)
+.section .data
+.skip 8
+a: .word 25,36,b
+d: .byte a,b,c
+.equ f, -a + d
+.equ e,f
+.section .bss
+.skip 16
+g: .skip 4
+.end

@@ -1,0 +1,22 @@
+.global a, c
+.extern b
+.section .text
+	jmp	a
+	jmp	*e(%r7)
+	jmp 	b
+	jmp	*d
+d: 	.word	  e
+	movb 	%r1l, b(%r7)
+	.equ f, e + 5
+	mov	c(%r7), %r1
+	mov	%r1, $e
+	.equ g, f - 2
+.section .data
+.skip 	8
+e:	.word	a 
+	.word	c
+	.word	.bss 
+a:	.word	b
+.section .bss
+c:	.skip 	8
+.end

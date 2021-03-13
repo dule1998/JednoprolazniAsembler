@@ -1,0 +1,28 @@
+
+.global a
+.extern b
+
+.section .text
+    mov %r1,a
+    or b,%r2
+    and c(%r2),(%r3)
+    cmp c, (%r4)
+e: sub d(%r7),d
+    push $e
+    pop b
+.equ f, g-3
+.equ g, e+2
+    jeq *a
+    jne c
+    jeq *c(%r7)
+
+.section .bss
+a:
+.skip 8
+d:
+
+.section .data
+.word a,b,c,d,e,f
+c: .byte 1,2,3,4,5,6,g
+.end
+

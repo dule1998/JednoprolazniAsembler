@@ -1,0 +1,15 @@
+.extern b
+.section .text
+add %r4, c
+sub %r6, a
+xchg %r4, %r6
+jmp *b
+.section .data
+c: .skip 6
+a: .byte 5,c,8
+.skip 12
+d: .word b
+.section .bss
+.skip 16
+e: .skip 8
+.end

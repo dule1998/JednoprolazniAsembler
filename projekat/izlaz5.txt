@@ -1,0 +1,29 @@
+#tabela simbola
+#naziv	sekcija	pomeraj	vred	opseg	red.br	def	flag
+UND	0	0	0	local	0	1	
+.text	1	0	22	local	1	1	RXP
+.bss	2	0	1	local	2	1	RW
+.data	3	0	18	local	3	1	RWP
+c	2	1	0	global	4	1	
+f	0	0	0	global	5	0	
+a	1	5	0	local	6	1	
+b	1	4	0	local	7	1	
+e	3	16	0	local	8	1	
+d	3	14	0	local	9	1	
+#.text
+6c 00 42 70 23 80 05 00 5c 46 80 04 00 b4 27 27 60 00 06 80 00 00 ac 00 80 16 00 9c 00 03 00 80 14 00 
+#.data
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 05 02 04 00 00 14 00 
+#.ret.text
+#offset	tip		vred
+6	R_386_32	1
+b	R_386_32	1
+14	R_386_32	4
+19	R_386_32	3
+20	R_386_32	3
+#.ret.data
+#offset	tip		vred
+11	R_386_32	1
+13	R_386_32	1
+14	R_386_32	5
+16	R_386_32	3

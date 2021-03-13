@@ -1,0 +1,20 @@
+.global a
+.extern d
+.section .data
+e: .word 1,2,3
+    .byte a,d,e
+.section .text
+a:
+    mov %r1,%r3
+    mov $0,%r4
+    mov $0,%r5
+c:
+    cmp %r4,%r2
+    jeq *b
+    add (%r3),%r5
+    add $1,%r4
+    add $1,%r3
+    jmp *c
+b:
+    mov %r5,%r6
+.end
